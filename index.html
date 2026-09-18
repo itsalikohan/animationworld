@@ -3,76 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دنیای انیمیشن | Animation World</title>
+    <title>دنیای انیمیشن | مرجع دانلود کارتون و انیمه</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-        }
+        body { font-family: 'Vazirmatn', sans-serif; }
     </style>
 </head>
 <body class="bg-[#1e1b4b] text-white min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
 
     <!-- هدر سایت -->
-    <header class="bg-[#2e2a72]/80 backdrop-blur-md border-b border-purple-900/50 sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- منوها -->
-            <nav class="hidden md:flex items-center gap-6 text-sm text-purple-200 font-medium">
-                <a href="#" class="hover:text-white transition">انیمیشن سینمایی</a>
-                <a href="#" class="hover:text-white transition">سریال</a>
-                <a href="#" class="hover:text-white transition">مجموعه‌ها</a>
-                <a href="#" class="hover:text-white transition">فیلم‌مدرسه</a>
-            </nav>
-
-            <!-- لوگو و نام سایت -->
-            <div class="flex items-center gap-2">
-                <span class="text-lg font-black tracking-wide text-white">دنیای انیمیشن</span>
-                <div class="w-8 h-8 bg-purple-600 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-purple-600/40">🎬</div>
+    <header class="bg-[#2e2a72]/85 backdrop-blur-md border-b border-purple-900/50 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-purple-600 rounded-2xl flex items-center justify-center text-white text-lg font-bold shadow-lg shadow-purple-600/40">🎬</div>
+                <span class="text-xl font-black tracking-wide text-white">دنیای انیمیشن</span>
             </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-purple-200">
+                <a href="index.html" class="hover:text-white font-semibold transition">صفحه اصلی</a>
+                <a href="#" class="hover:text-white transition">انیمیشن‌ها</a>
+                <a href="#" class="hover:text-white transition">دوبله فارسی</a>
+            </nav>
         </div>
     </header>
 
-    <!-- بخش جستجو و محتوای اصلی -->
-    <main class="container mx-auto px-4 py-12 flex-grow">
-        <!-- نوار جستجو -->
-        <div class="max-w-2xl mx-auto mb-12 text-center">
-            <h1 class="text-3xl md:text-4xl font-black mb-6 tracking-tight">به <span class="text-purple-400">دنیای انیمیشن</span> خوش آمدید</h1>
-            <div class="flex gap-2 bg-[#2e2a72]/60 p-2 rounded-2xl border border-purple-900/60 shadow-xl">
-                <input type="text" placeholder="جستجوی انیمیشن، کارتون، سریال..." class="bg-transparent px-4 py-3 w-full text-sm text-white placeholder-purple-300/60 focus:outline-none">
-                <button class="bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-xl font-semibold text-sm transition cursor-pointer shadow-md shadow-purple-600/30">جستجو</button>
+    <!-- محتوای اصلی صفحه اصلی -->
+    <main class="container mx-auto px-4 py-12 flex-grow max-w-6xl">
+        
+        <!-- بنر خوش‌آمدگویی -->
+        <div class="bg-gradient-to-r from-[#2e2a72] to-[#3b358a] border border-purple-900/50 p-8 rounded-3xl mb-10 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="relative z-10 max-w-xl">
+                <span class="bg-purple-600/50 text-purple-200 text-xs px-3 py-1.5 rounded-xl border border-purple-400/20 font-semibold inline-block mb-3">🌟 بهترین مرجع دانلود و تماشای انیمیشن</span>
+                <h1 class="text-3xl md:text-4xl font-black mb-4 text-white">به دنیای انیمیشن خوش آمدید!</h1>
+                <p class="text-purple-200/80 text-sm leading-relaxed">جدیدترین و محبوب‌ترین انیمیشن‌ها و کارتون‌های روز دنیا را با بالاترین کیفیت و قابلیت تماشای آنلاین دنبال کنید.</p>
+            </div>
+            <div class="text-6xl md:text-8xl select-none filter drop-shadow-lg">🚀</div>
+        </div>
+
+        <!-- بخش جستجو -->
+        <div class="mb-10">
+            <div class="relative max-w-xl mx-auto">
+                <input type="text" id="searchInput" placeholder="جستجوی نام انیمیشن (مثلا: وال-ایی، شیر شاه، نمو، شرکت هیولاها)..." 
+                    class="w-full bg-[#2e2a72]/60 border border-purple-900/60 rounded-2xl px-5 py-4 pr-12 text-sm text-white placeholder-purple-300/50 focus:outline-none focus:border-purple-500 transition shadow-inner">
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-purple-300/70 text-lg">🔍</span>
             </div>
         </div>
 
-        <!-- بخش نمایش انیمیشن‌ها -->
-        <section class="max-w-4xl mx-auto">
-            <h2 class="text-xl font-bold mb-6 text-purple-200 border-r-4 border-purple-500 pr-3">انیمیشن‌های ویژه</h2>
+        <!-- لیست انیمیشن‌ها -->
+        <h2 class="text-xl font-black mb-6 text-purple-200 border-r-4 border-purple-500 pr-3">انیمیشن‌های محبوب</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="animationsGrid">
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- کارت باب اسفنجی -->
-                <div class="bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-lg hover:border-purple-500/50 transition group">
-                    <div class="h-56 bg-[#25225c] flex flex-col items-center justify-center text-white relative group-hover:scale-105 transition duration-300">
-                        <span class="text-5xl mb-2">🧽</span>
-                        <span class="text-xs font-bold bg-yellow-500 text-slate-950 px-2.5 py-1 rounded-full absolute top-3 right-3 shadow">محبوب</span>
+            <!-- کارت انیمیشن باب اسفنجی -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="باب اسفنجی شلوارمکعبی SpongeBob SquarePants کمدی">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/SpongeBobSquarePants.jpg" alt="باب اسفنجی" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">دوبله فارسی</span>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-base mb-1 text-white">باب اسفنجی شلوارمکعبی</h3>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">باب اسفنجی شلوارمکعبی</h3>
                         <p class="text-xs text-purple-300/70 mb-3" dir="ltr">SpongeBob SquarePants</p>
-                        <div class="flex justify-between items-center text-xs text-purple-200 mb-4 bg-[#1e1b4b] p-2.5 rounded-xl border border-purple-900/40">
-                            <span>⭐ امتیاز: 8</span>
-                            <span>کمدی، خانوادگی</span>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.0</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">کمدی</span>
                         </div>
-                        <a href="SpongeBobSquarePants.html" class="block text-center w-full bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold py-2.5 rounded-xl transition cursor-pointer shadow-md shadow-purple-600/30">تماشا</a>
                     </div>
                 </div>
+                <div class="p-5 pt-0">
+                    <a href="SpongeBobSquarePants.html" class="w-full bg-purple-600 hover:bg-purple-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-purple-600/30">
+                        <span>مشاهده و دانلود فصل‌ها</span>
+                        <span>→</span>
+                    </a>
+                </div>
             </div>
-        </section>
+
+            <!-- کارت انیمیشن بالا (Up) -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن بالا Up 2009 ماجراجویی سینمایی">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/انیمیشن بالا.jpg" alt="انیمیشن بالا Up" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">دوبله فارسی</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">انیمیشن بالا (Up)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">Up (2009)</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.3</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">ماجراجویی</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="انیمیشن سینمایی Up بالا 2009.html" class="w-full bg-purple-600 hover:bg-purple-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-purple-600/30">
+                        <span>مشاهده و دانلود انیمیشن</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- کارت انیمیشن کورالین (Coraline) -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن کورالین Coraline 2009 فانتزی ترسناک آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="انیمیشن کورالین" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">انیمیشن کورالین (Coraline)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">Coraline (2009)</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 7.7</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/d49sx66" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- انیمیشن سینمایی WALL·E وال-ایی -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن سینمایی WALL·E وال-ایی علمی تخیلی آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="وال-ایی" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">انیمیشن وال-ایی (WALL·E)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">WALL·E</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.4</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/zqrbplg" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- انیمیشن سینمایی The Lion King شیر شاه -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن سینمایی The Lion King شیر شاه کلاسیک آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="شیر شاه" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">شیر شاه (The Lion King)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">The Lion King</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.5</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/gfe3g96" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- انیمیشن سینمایی Finding Nemo در جستجوی نمو -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن سینمایی Finding Nemo در جستجوی نمو ماجراجویی آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="در جستجوی نمو" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">در جستجوی نمو (Finding Nemo)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">Finding Nemo</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.2</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/eOr1n" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- انیمیشن سینمایی Monsters, Inc. شرکت هیولاها -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن سینمایی Monsters, Inc. شرکت هیولاها کمدی آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="شرکت هیولاها" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">شرکت هیولاها (Monsters, Inc.)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">Monsters, Inc.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.1</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/tbyd15w" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- انیمیشن سینمایی Toy Story داستان اسباب بازی -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن سینمایی Toy Story داستان اسباب بازی آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="داستان اسباب بازی" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">داستان اسباب‌بازی (Toy Story)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">Toy Story</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.3</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/i05w50u" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- انیمیشن سینمایی Toy Story 3 داستان اسباب‌ بازی ۳ -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن سینمایی Toy Story 3 داستان اسباب‌ بازی ۳ آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="داستان اسباب بازی ۳" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">داستان اسباب‌بازی ۳ (Toy Story 3)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">Toy Story 3</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.3</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/kyry6f0" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- انیمیشن سینمایی Ratatouille راتاتویی(موش سر آشپز) -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن سینمایی Ratatouille راتاتویی موش سر آشپز آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="راتاتویی" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">راتاتویی (Ratatouille)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">Ratatouille</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.1</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/z4502hs" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- انیمیشن سینمایی Spirited Away ربوده شده / شهر اشباح -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن سینمایی Spirited Away ربوده شده شهر اشباح انیمه آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="شهر اشباح" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">شهر اشباح (Spirited Away)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">Spirited Away</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.6</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/maov053" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- انیمیشن سینمایی Inside Out درونِ بیرون -->
+            <div class="animation-card bg-[#2e2a72]/40 border border-purple-900/50 rounded-2xl overflow-hidden shadow-xl hover:border-purple-600 transition flex flex-col justify-between group" data-title="انیمیشن سینمایی Inside Out درون بیرون آپارات آنلاین">
+                <div>
+                    <div class="h-48 w-full overflow-hidden relative bg-[#25225c]">
+                        <img src="media/Coraline.jpg" alt="درون بیرون" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow-md">آپارات</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-black text-lg mb-1 text-white group-hover:text-purple-300 transition">درونِ بیرون (Inside Out)</h3>
+                        <p class="text-xs text-purple-300/70 mb-3" dir="ltr">Inside Out</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">⭐ 8.1</span>
+                            <span class="bg-[#1e1b4b] px-2.5 py-1 rounded-lg border border-purple-900/40 text-purple-200">تماشای آنلاین</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://www.aparat.com/v/btfk6nq" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                        <span>تماشای آنلاین در آپارات</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- پیام عدم نتیجه -->
+        <div id="noResult" class="hidden text-center py-12 text-purple-300/60 text-sm">
+            هیچ انیمیشنی با این مشخصات پیدا نشد! 🔍
+        </div>
     </main>
 
-    <!-- فوتر -->
-    <footer class="bg-[#17153a] border-t border-purple-900/40 py-6 text-center text-xs text-purple-400/60">
+    <!-- فوتر سایت -->
+    <footer class="bg-[#17153a] border-t border-purple-900/40 py-8 text-center text-xs text-purple-400/60 mt-12">
         <p>تمامی حقوق محفوظ است &copy; ۲۰۲۶ - دنیای انیمیشن (Animation World)</p>
     </footer>
+
+    <!-- اسکریپت جستجوی زنده -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.animation-card');
+        const noResult = document.getElementById('noResult');
+
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                if (title.includes(query)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResult.classList.remove('hidden');
+            } else {
+                noResult.classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باب اسفنجی | دنیای انیمیشن</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#1e1b4b] text-white min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
+
+    <!-- هدر صفحه -->
+    <header class="bg-[#2e2a72]/80 backdrop-blur-md border-b border-purple-900/50 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="bg-purple-700/60 hover:bg-purple-600 text-purple-200 hover:text-white px-4 py-2 rounded-xl text-xs font-semibold transition flex items-center gap-2">
+                <span>← بازگشت به صفحه اصلی</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <span class="text-lg font-black tracking-wide text-white">دنیای انیمیشن</span>
+                <div class="w-8 h-8 bg-purple-600 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-purple-600/40">🎬</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوای فصل‌ها -->
+    <main class="container mx-auto px-4 py-10 flex-grow max-w-4xl">
+        <!-- اطلاعات انیمیشن با تصویر دلخواه -->
+        <div class="bg-[#2e2a72]/40 border border-purple-900/50 p-6 rounded-2xl mb-8 flex flex-col md:flex-row items-center gap-6 shadow-xl">
+            <div class="w-32 h-32 bg-[#25225c] rounded-2xl overflow-hidden shadow-inner shrink-0 border border-purple-900/50">
+                <img src="media/SpongeBobSquarePants.jpg" alt="باب اسفنجی" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h1 class="text-2xl font-black mb-2 text-white">باب اسفنجی شلوارمکعبی</h1>
+                <p class="text-xs text-purple-300/70 mb-4" dir="ltr">SpongeBob SquarePants</p>
+                <div class="flex flex-wrap gap-3 text-xs">
+                    <span class="bg-[#1e1b4b] px-3 py-1.5 rounded-xl border border-purple-900/40 text-purple-200">⭐ امتیاز: 8</span>
+                    <span class="bg-[#1e1b4b] px-3 py-1.5 rounded-xl border border-purple-900/40 text-purple-200">🎭 کمدی، خانوادگی</span>
+                    <span class="bg-[#1e1b4b] px-3 py-1.5 rounded-xl border border-purple-900/40 text-purple-200">📺 ۱ فصل (آماده دانلود)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- بخش فصل و لیست دانلود قسمت‌ها -->
+        <h2 class="text-lg font-bold mb-4 text-purple-200 border-r-4 border-purple-500 pr-3">لینک‌های دانلود فصل اول</h2>
+        <div class="space-y-3">
+            <!-- کادر اصلی فصل ۱ -->
+            <div class="bg-[#312e81] border border-purple-900/60 rounded-xl shadow-md overflow-hidden transition">
+                <div onclick="toggleEpisodes()" class="p-4 flex flex-wrap justify-between items-center gap-3 cursor-pointer hover:bg-[#3730a3] transition">
+                    <div class="flex items-center gap-3">
+                        <span id="arrow-icon" class="w-7 h-7 rounded-lg bg-[#1e1b4b] text-purple-300 flex items-center justify-center text-xs font-bold transition transform duration-300">⌄</span>
+                        <span class="font-bold text-sm text-white">فصل 1 (دوبله فارسی)</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 text-xs">
+                        <span class="bg-[#1e1b4b]/60 text-purple-200 px-3 py-1.5 rounded-lg border border-purple-900/40">کیفیت 720p Web-DL</span>
+                        <span class="bg-[#1e1b4b]/60 text-purple-200 px-3 py-1.5 rounded-lg border border-purple-900/40">قسمت ها 20</span>
+                        <span class="bg-emerald-600 text-white font-semibold px-3 py-1.5 rounded-lg shadow-sm">دوبله فارسی</span>
+                    </div>
+                </div>
+
+                <!-- لیست قسمت‌ها برای دانلود (از ۱ تا ۲۰) با لینک‌های واقعی -->
+                <div id="episodes-list" class="hidden bg-[#25225c]/60 border-t border-purple-900/40 p-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <script>
+                        const downloadLinks = [
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E01.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E02.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E03.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E04.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E05.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E06.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E07.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E08.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E09.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E10.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E11.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E12.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E13.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E14.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E15.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E16.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E17.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E18.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E19.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv",
+                            "https://dls5.varzeshha3-uploader.top/dl8/DonyayeSerial/series2/tt0206512/Dubbed/S01/720p.Web-DL/SpongeBob.SquarePants.S01E20.720p.Web-DL.x264.Pahe.Farsi.Dubbed.DonyayeSerial.mkv"
+                        ];
+
+                        for (let j = 1; j <= 20; j++) {
+                            document.write(`
+                                <div class="bg-[#1e1b4b]/70 hover:bg-purple-600/30 border border-purple-900/40 p-3 rounded-xl text-xs flex justify-between items-center transition">
+                                    <span class="font-medium text-purple-200">قسمت ${j}</span>
+                                    <a href="${downloadLinks[j-1]}" target="_blank" class="bg-purple-600 hover:bg-purple-500 text-white px-3 py-1.5 rounded-lg font-semibold transition shadow-sm">📥 دانلود فایل</a>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- اسکریپت باز و بسته شدن لیست قسمت‌ها -->
+    <script>
+        function toggleEpisodes() {
+            const list = document.getElementById('episodes-list');
+            const arrow = document.getElementById('arrow-icon');
+            if (list.classList.contains('hidden')) {
+                list.classList.remove('hidden');
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                list.classList.add('hidden');
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+
+    <!-- فوتر -->
+    <footer class="bg-[#17153a] border-t border-purple-900/40 py-6 text-center text-xs text-purple-400/60">
+        <p>تمامی حقوق محفوظ است &copy; ۲۰۲۶ - دنیای انیمیشن (Animation World)</p>
+    </footer>
+
+</body>
+</html>
